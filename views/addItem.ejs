@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<h1><%=item.name%><%= title %></h1>
+<form method="post" action="/items">
+  <ul>
+    <li>
+      <input type="text" name="name" /><br /><label for="name">
+        Item Name </label
+      ><br />
+    </li>
+    <li>
+      <input type="text" name="description" /><br /><label for="description">
+        Description </label
+      ><br />
+    </li>
+    <li>
+      <input type="text" name="dateOnBag" /><br />
+      <label for="dateOnBag"> Date on Bag </label><br />
+    </li>
+    <li>
+      <button>Add new item</button>
+    </li>
+  </ul>
+</form>
+
+<% include ./partials/footer %>
