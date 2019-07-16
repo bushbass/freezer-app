@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<h1>Edit <%=item.name%></h1>
+<form method="post" action="/items/<%=item.id%>?_method=PUT">
+  <ul>
+    <li>
+      <input type="text" name="name" value=<%=item.name%>><br /><label for="name">
+        Item Name </label
+      ><br />
+    </li>
+    <li>
+      <input type="text" name="description" value=<%=item.description%> ><br /><label for="description">
+        Description </label
+      ><br />
+    </li>
+    <li>
+      <input type="text" name="dateOnBag"  value=<%=item.dateOnBag%>><br />
+      <label for="dateOnBag"> Date on Bag </label><br />
+    </li>
+    <li>
+      <button>Edit item</button>
+    </li>
+  </ul>
+</form>
+
+<% include ./partials/footer %>

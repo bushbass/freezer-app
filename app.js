@@ -8,7 +8,7 @@ var methodOverride = require('method-override');
 
 require('dotenv').config();
 
-const db = process.env.MONGO_URI; // or --> 'mongodb://localhost:27017/freezer-app'
+const db = process.env.MONGO_URI_LOCAL;
 mongoose
   .connect(db, {
     useNewUrlParser: true,
