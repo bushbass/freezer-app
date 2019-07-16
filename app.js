@@ -8,7 +8,7 @@ var methodOverride = require('method-override');
 
 require('dotenv').config();
 
-const db = process.env.MONGO_URI_LOCAL;
+const db = process.env.MONGO_URI;
 mongoose
   .connect(db, {
     useNewUrlParser: true,
