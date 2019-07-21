@@ -4,14 +4,11 @@
 <form method="post" action="/items/<%=item.id%>?_method=PUT">
   <ul>
     <li>
-      <input type="text" name="name" value=<%=item.name%>><br /><label for="name">
-        Item Name </label
-      ><br />
-    </li>
+      <input type="text" name="name" value="<%=item.name%>"><br /><label for="name">
+        Item Name </label>
     <li>
-      <input type="text" name="description" value=<%=item.description%> ><br /><label for="description">
-        Description </label
-      ><br />
+      <input type="text" name="description" value="<%=item.description%>" ><br /><label for="description">
+        Description </label>
     </li>
     <li>
       <input type="text" name="dateOnBag"  value=<%=item.dateOnBag%>><br />

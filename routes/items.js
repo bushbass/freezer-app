@@ -35,17 +35,16 @@ router.get('/:id', (req, res) => {
 });
 // GET - EDIT FORM
 router.get('/:id/edit', (req, res) => {
-  Item.findById(req.params.id).then(item =>
-    res.render('editItem', { item, title: 'Edit an item' })
-  );
+  Item.findById(req.params.id).then(item => res.render('editItem', { item }));
 });
 // PUT - UPDATE - EDIT ITEM
 router.put('/:id', (req, res) => {
   const updatedItem = {
     name: req.body.name,
-    des: req.body.description,
+    description: req.body.description,
     dateOnBag: req.body.dateOnBag
   };
+  console.log(updatedItem);
   Item.findByIdAndUpdate(req.params.id, updatedItem, { new: true })
     .then(item => res.render('singleItem', { item }))
     .catch(err => console.log(err));
