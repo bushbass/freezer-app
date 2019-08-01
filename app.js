@@ -8,7 +8,7 @@ var methodOverride = require('method-override');
 
 require('dotenv').config();
 
-const db = process.env.MONGO_URI;
+const db = process.env.MONGO_URI_LOCAL;
 mongoose
   .connect(db, {
     useNewUrlParser: true,
@@ -19,6 +19,7 @@ mongoose
 
 const indexRouter = require('./routes/index');
 const itemsRouter = require('./routes/items');
+const itemsAPI = require('./api/items');
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/items', itemsRouter);
+app.use('/api/items', itemsAPI);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
