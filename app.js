@@ -5,10 +5,11 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 var methodOverride = require('method-override');
+const cors = require('cors');
 
 require('dotenv').config();
 
-const db = process.env.MONGO_URI_LOCAL;
+const db = process.env.MONGO_URI;
 mongoose
   .connect(db, {
     useNewUrlParser: true,
@@ -19,7 +20,7 @@ mongoose
 
 const indexRouter = require('./routes/index');
 const itemsRouter = require('./routes/items');
-const itemsAPI = require('./api/items');
+const itemsAPI = require('./routes/api/items');
 
 const app = express();
 
@@ -27,7 +28,7 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
-
+app.use(cors());
 app.use(express.json());
 app.use(logger('dev'));
 app.use(express.json());

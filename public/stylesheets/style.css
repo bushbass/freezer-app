@@ -15,3 +15,8 @@ ul {
 li {
   padding: 5px;
 }
+
+.fridge-pic {
+  width: 100px;
+  float: left;
+}

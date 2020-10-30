@@ -19,8 +19,8 @@ function CreateForm() {
     };
     console.log(newItem);
     axios
-      .post('http://localhost:3001/items', newItem)
-      .then(res => console.log(res.data));
+      .post('http://localhost:3001/api/items', newItem)
+      .then(res => console.log('************', res.data));
   };
 
   return (
